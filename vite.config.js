@@ -1,7 +1,9 @@
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import { bunny } from "laravel-vite-plugin/fonts";
 import tailwindcss from "@tailwindcss/vite";
+import path from "node:path";
 
 export default defineConfig({
     plugins: [
@@ -14,8 +16,17 @@ export default defineConfig({
                 }),
             ],
         }),
+
         tailwindcss(),
+
+        createSvgIconsPlugin({
+            iconDirs: [path.resolve(process.cwd(), "resources/icons")],
+            symbolId: "icon-[name]",
+            inject: "body",
+            customDomId: "__svg__icons__dom__",
+        }),
     ],
+
     server: {
         watch: {
             ignored: ["**/storage/framework/views/**"],
