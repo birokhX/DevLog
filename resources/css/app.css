@@ -1,11 +1,13 @@
 @import "tailwindcss";
+@import "tailwind-animations";
 @import "./base/base.css";
 @import "./base/fonts.css";
 @import "./theme/theme.css";
+@import "./utilities/utilities.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
-@utility label {
-    @apply text-xs;
+[x-cloak] {
+    display: none !important;
 }
