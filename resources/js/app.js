@@ -1,9 +1,11 @@
 import "virtual:svg-icons-register";
-import Alpine from "alpinejs";
+import {
+    Livewire,
+    Alpine,
+} from "../../vendor/livewire/livewire/dist/livewire.esm";
 import floatingToolbar from "./components/ui/floating-toolbar";
 import tooltip from "./components/ui/tooltip";
 
 Alpine.data("floatingToolbar", floatingToolbar);
 Alpine.data("tooltip", tooltip);
-window.Alpine = Alpine;
-Alpine.start();
+Livewire.start();
